@@ -12,7 +12,7 @@
   </head>
   <body>
   <%
-    response.sendRedirect("signup.do");
+    response.sendRedirect("signup");
   %>
   </body>
 </html>
