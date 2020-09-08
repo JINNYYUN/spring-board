@@ -1,0 +1,165 @@
+/*공통*/
+.login-container{
+    padding-top: 120px;
+}
+
+/*메인 로그인 container*/
+.main-login-container{
+    width: 500px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 60px 50px;
+    position: relative;
+    border: 1px solid #e9ecef;
+}
+
+/*이메일 로그인과 회원가입 container(공통)*/
+.email-signinup-container{
+    width: 500px;
+    margin: 0 auto;
+    padding: 60px 50px;
+    position: relative;
+    border: 1px solid #e9ecef;
+}
+
+/*로그인 페이지 header(공통)*/
+.login-header{
+    text-align: center;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.main-login-container .login-header{
+    margin-bottom: 0;
+}
+
+/* 로그인 페이지 본문(공통) */
+.login-content-wrapper{
+    padding: 0 10px;
+}
+
+.login-input-group{
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.login-label-title{
+    margin-bottom: 4px;
+}
+
+.required-label{
+    color : #FA5F6E;
+}
+
+.login-input-group .eyes-box{
+    display: flex;
+    color: #858899;
+    position: absolute;
+    top: 43px;
+    right: 16px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/*로그인 페이지 footer(공통)*/
+.login-footer{
+    display: flex;
+    justify-content: center;
+    line-height: 28px;
+}
+
+.login-footer-moving{
+    padding-left: 8px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/*이메일로 로그인*/
+.signin-check{
+    display: flex;
+    justify-content: space-between;
+}
+
+.signin-check-box{
+    display: flex;
+    align-items : baseline;
+}
+
+.label-signin-check{
+    cursor: pointer;
+}
+
+/*이메일로 회원가입*/
+/*약관동의*/
+.agreements{
+    color: #525463;
+    font-size: 14px;
+    letter-spacing: -0.1px;
+    line-height: 24px;
+    padding-left : 1px;
+}
+
+.agreement-list{
+    display: flex;
+    align-items : baseline;
+}
+
+.agreement-list:nth-child(1){
+    margin-bottom: 8px;
+}
+
+.agreement-list input[type=checkbox]{
+    margin-right: 8px;
+}
+
+.agreement-list label a{
+    color: #525463;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/*유효성 검사 텍스트*/
+.validation-message{
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.login-button{
+    padding-top: 16px;
+    padding-bottom: 24px;
+}
+
+.login-button button{
+    height: 60px;
+    width: 100%;
+}
+
+/*유효성 검사 아이콘*/
+.validation-info-icon{
+    color: #D4505D;
+    font-size: 14px;
+    padding-top: 2px;
+    padding-right: 3px;
+}
+
+/*회원가입-비밀번호 유효성 검사 실시간 메세지*/
+#length-validation-info-icon{
+    color: #525463;
+    font-size: 14px;
+    padding-top: 2px;
+    padding-right: 3px;
+}
+
+#number-validation-info-icon{
+    color: #525463;
+    font-size: 14px;
+    padding-top: 2px;
+    padding-right: 3px;
+}
+
+@media (max-height: 750px) {
+    .login-container{
+        padding-top : 2%;
+    }
+}

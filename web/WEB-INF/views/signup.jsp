@@ -9,6 +9,12 @@
 <html>
 <head>
     <title>회원가입</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/default.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/fonticon.css">
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/member/login.css">
+
 </head>
 <body>
 <div class="container-sm ticly__basic-content-layout">
@@ -48,64 +54,19 @@
                         <label for="promotion" class="custom-control-label text text-color-gray200 text-weight-regular">이벤트, 프로모션, 알림 메일 및 SMS수신에 대해 동의합니다.(선택)</label>
                     </div>
                 </div>
-                <div class="login-modal-button">
+                <div class="login-button">
                     <button id="signupSubmitBtn" class="btn btn-primary disabled">회원가입</button>
                 </div>
             </div>
             <footer class="login-footer">
                 <h6 class="text text-color-gray300 text-weight-regular">로그인으로 이동</h6>
-                <a href="/member/login" class="text text-color-gray200 text-weight-regular login-footer-moving h6">로그인</a>
+                <a href="member/login" class="text text-color-gray200 text-weight-regular login-footer-moving h6">로그인</a>
             </footer>
         </div>
     </div>
 </div>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-    (() => {
+<script src="${pageContext.request.contextPath}/js/member/signup.js"></script>
 
-        let signupEmailElem = document.getElementById('signup-email');  //이메일
-        let signupPasswordElem = document.getElementById('signup-password');   //비밀번호
-
-        let signupSubmitBtn = document.getElementById('signupSubmitBtn'); //회원가입 버튼
-
-        const onSignupHandler  = () => {
-            const email = signupEmailElem.value;
-            const password = signupPasswordElem.value;
-
-            console.log("확인 : " + email + password)
-
-            const member={
-                email : email,
-                password : password
-            };
-
-            axios({
-                method: 'post',
-                url: '/member/signup.do',
-                headers: { 'content-type': 'application/json' },
-                data : JSON.stringify(member)
-                /*
-                params: {
-                    email : email,
-                    password : password
-                }*/
-            })
-                .then(function (result){
-                    alert("가입성공")
-                    conesole.log(result);
-                    if(result.data.message == "success"){
-                        window.location.href="/member/emailSignin";
-                    } else {
-                        alert("회원가입이 완료되지 않았습니다.");
-                    }
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-        }
-
-        signupSubmitBtn.addEventListener("click", onSignupHandler); //회원가입 버튼 클릭 시 이벤트 핸들러
-    })();
-</script>
 </body>
 </html>

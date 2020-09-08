@@ -4,10 +4,7 @@ import com.jinny.board.dto.MemberDTO;
 import com.jinny.board.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MemberController {
@@ -15,18 +12,31 @@ public class MemberController {
     @Autowired    // DI IOC
     MemberService memberService;
 
-    @GetMapping("login.do")
+    @GetMapping("member/login")
     public String login() {
         return "login";
     }
 
-    @GetMapping("signup.do")
+    @GetMapping("member/signup")
     public String moveSignup(MemberDTO memberDTO) {
         return "signup";
     }
 
+    /**
+     * 회원가입시 이메일 체크
+     * @param userEmail
+     * @return 1이면 중복, 0이면 중복 아님
+     */
     @ResponseBody
-    @PostMapping("member/signup.do")
+    @PostMapping("member/emailCheck")
+    public int checkEmail(@RequestParam(value = "email") String userEmail) {
+        int result = memberService.findDuplicateEmail(userEmail);
+
+        return result;
+    }
+
+    @ResponseBody
+    @PostMapping("member/signup")
     public String signup(@RequestBody MemberDTO memberDTO) {
         int checkNum = memberService.insertNewMember(memberDTO);
 

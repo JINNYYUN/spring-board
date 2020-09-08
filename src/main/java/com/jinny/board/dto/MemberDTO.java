@@ -1,16 +1,18 @@
 package com.jinny.board.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Builder
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class MemberDTO {
     private String email;
     private String password;
     private String name;
     private int auth;
-    private String regiDate; //회원가입 날짜
+    private int marketing_agree;
 }
