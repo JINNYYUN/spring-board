@@ -59,5 +59,8 @@
         </div>
     </div>
 </div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/member/signin.js"></script>
 </body>
 </html>
